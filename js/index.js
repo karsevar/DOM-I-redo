@@ -49,11 +49,26 @@ console.log(navItems);
 
 navItems.forEach((navItem, index) => {
   navItem.textContent = siteContent['nav'][`nav-item-${index+1}`];
-})
+});
 
 //navigation image:
 const navImage = document.querySelector('#logo-img');
 navImage.src = siteContent['nav']['img-src'];
+
+// <div class='cta-text'> <h1></h1> </div>
+const ctaContent = document.querySelector('.cta-text h1');
+ctaContent.textContent = siteContent['cta']['h1'];
+
+// <button></button>
+const ctaButton = document.querySelector('.cta-text button');
+ctaButton.textContent = siteContent['cta']['button']
+
+//<img id='cta-img' ...>
+const ctaImage = document.querySelector('#cta-img');
+ctaImage.src = siteContent['cta']['img-src'];
+
+
+
 
 
 
