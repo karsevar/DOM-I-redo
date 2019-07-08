@@ -59,6 +59,10 @@ navImage.src = siteContent['nav']['img-src'];
 const ctaContent = document.querySelector('.cta-text h1');
 ctaContent.textContent = siteContent['cta']['h1'];
 
+//Will need to center the h1 tag a little bit
+ctaContent.style.width = '150px';
+ctaContent.style.marginRight = '90px';
+
 // <button></button>
 const ctaButton = document.querySelector('.cta-text button');
 ctaButton.textContent = siteContent['cta']['button']
@@ -102,7 +106,24 @@ contactParagraphs[2].textContent = siteContent['contact']['email'];
 const footer = document.querySelector('footer p');
 footer.textContent = siteContent['footer']['copyright'];
 
+// Task 3 add new content to navigation bar:
+// navItems.forEach(navItem => navItem.addEventListener('click', console.log('click')));
 
+const homeNav = document.createElement('a');
+homeNav.href = '#';
+homeNav.textContent = 'Home';
+homeNav.style.color = 'green';
+
+const signNav = document.createElement('a');
+signNav.href = '#';
+signNav.textContent = 'Sign Up';
+signNav.style.color = 'green';
+
+const navContainer = document.querySelector('.container nav');
+navContainer.prepend(homeNav);
+navContainer.appendChild(signNav);
+
+navItems.forEach(navItem => navItem.style.color = 'green');
 
 
 
