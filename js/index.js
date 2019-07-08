@@ -99,6 +99,8 @@ contactParagraphs[2].textContent = siteContent['contact']['email'];
 
 
 // footer
+const footer = document.querySelector('footer p');
+footer.textContent = siteContent['footer']['copyright'];
 
 
 
