@@ -39,9 +39,92 @@ const siteContent = {
 
 
 
-// Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"]);
+// // Example: Update the img src for the logo
+// let logo = document.getElementById("logo-img");
+// logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+// navigation bar:
+const navItems = document.querySelectorAll('nav a');
+console.log(navItems);
+
+navItems.forEach((navItem, index) => {
+  navItem.textContent = siteContent['nav'][`nav-item-${index+1}`];
+});
+
+//navigation image:
+const navImage = document.querySelector('#logo-img');
+navImage.src = siteContent['nav']['img-src'];
+
+// <div class='cta-text'> <h1></h1> </div>
+const ctaContent = document.querySelector('.cta-text h1');
+ctaContent.textContent = siteContent['cta']['h1'];
+
+//Will need to center the h1 tag a little bit
+ctaContent.style.width = '150px';
+ctaContent.style.marginRight = '90px';
+
+// <button></button>
+const ctaButton = document.querySelector('.cta-text button');
+ctaButton.textContent = siteContent['cta']['button']
+
+//<img id='cta-img' ...>
+const ctaImage = document.querySelector('#cta-img');
+ctaImage.src = siteContent['cta']['img-src'];
+
+// All of the h4s within the main content section.
+const contentHeaders = document.querySelectorAll('.text-content h4');
+contentHeaders[0].textContent = siteContent['main-content']['features-h4'];
+contentHeaders[1].textContent = siteContent['main-content']['about-h4'];
+contentHeaders[2].textContent = siteContent['main-content']['services-h4'];
+contentHeaders[3].textContent = siteContent['main-content']['product-h4'];
+contentHeaders[4].textContent = siteContent['main-content']['vision-h4'];
+
+// All of the p tags within the main-content section.
+const contentParagraphs = document.querySelectorAll('.text-content p');
+contentParagraphs[0].textContent = siteContent['main-content']['features-content'];
+contentParagraphs[1].textContent = siteContent['main-content']['about-content'];
+contentParagraphs[2].textContent = siteContent['main-content']['services-content'];
+contentParagraphs[3].textContent = siteContent['main-content']['product-content'];
+contentParagraphs[4].textContent = siteContent['main-content']['vision-content'];
+console.log(contentParagraphs);
+
+// main content image
+const mainContentImage = document.querySelector('.middle-img');
+mainContentImage.src = siteContent['main-content']['middle-img-src'];
+
+// contact section:
+const contactHeader = document.querySelector('.contact h4');
+contactHeader.textContent = siteContent['contact']['contact-h4']
+
+const contactParagraphs = document.querySelectorAll('.contact p');
+contactParagraphs[0].textContent = siteContent['contact']['address'];
+contactParagraphs[1].textContent = siteContent['contact']['phone'];
+contactParagraphs[2].textContent = siteContent['contact']['email'];
+
+
+// footer
+const footer = document.querySelector('footer p');
+footer.textContent = siteContent['footer']['copyright'];
+
+// Task 3 add new content to navigation bar:
+// navItems.forEach(navItem => navItem.addEventListener('click', console.log('click')));
+
+const homeNav = document.createElement('a');
+homeNav.href = '#';
+homeNav.textContent = 'Home';
+homeNav.style.color = 'green';
+
+const signNav = document.createElement('a');
+signNav.href = '#';
+signNav.textContent = 'Sign Up';
+signNav.style.color = 'green';
+
+const navContainer = document.querySelector('.container nav');
+navContainer.prepend(homeNav);
+navContainer.appendChild(signNav);
+
+navItems.forEach(navItem => navItem.style.color = 'green');
+
 
 
 
